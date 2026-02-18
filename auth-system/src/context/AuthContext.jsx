@@ -9,10 +9,15 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const storedUser = localStorage.setItem("user");
+        const storedUser = localStorage.getItem("user");
 
         if (storedUser) {
+            try {
             setUser(JSON.parse(storedUser));
+        } catch (error) {
+            console.error("Invalid JSON in localStorage");
+            localStorage.removeItem("user");
+        }
         }
 
     }, [])

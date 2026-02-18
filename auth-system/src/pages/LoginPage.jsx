@@ -3,7 +3,7 @@ import useAuth from '../hooks/useAuth'
 import Input from '../components/Input';
 import Button from '../components/Button';
 
-const LoginPage = ({ setPage }) => {
+const Login = ({ setPage }) => {
 
   const { login } = useAuth();
   const [form, setForm] = useState({
@@ -45,4 +45,4 @@ const LoginPage = ({ setPage }) => {
   )
 }
 
-export default LoginPage
+export default Login
